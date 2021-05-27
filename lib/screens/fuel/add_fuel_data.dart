@@ -152,7 +152,11 @@ class _AddFuelWidgetState extends State<AddFuelWidget> {
             ),
             TextFormField(
               decoration: const InputDecoration(
-                  hintText: 'Licznik', icon: Icon(Icons.time_to_leave_sharp)),
+                  hintText: 'Licznik',
+                  icon: Icon(
+                    Icons.time_to_leave_sharp,
+                  ),
+                  suffixText: 'KM'),
               keyboardType: TextInputType.numberWithOptions(decimal: true),
               controller: counterController,
             ),

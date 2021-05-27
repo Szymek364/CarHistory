@@ -1,10 +1,9 @@
 import 'package:car_history/models/fuel_data_collection.dart';
-import 'package:car_history/models/fuel_model.dart';
 import 'package:car_history/routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
 
 class Dashboard extends StatefulWidget {
   @override

@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="675fb52b-5e87-40d0-a75d-8576493ddd3c" name="Default Changelist" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/lib/models/fuel_data_collection.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/screens/fuel/fuel_list.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+    <list default="true" id="675fb52b-5e87-40d0-a75d-8576493ddd3c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/lib/screens/main/home.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/add_fuel_data.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/fuel/add_fuel_data.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/dashboard.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/helper/FuelCollection.dart" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/routes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/routes.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/fuel/add_fuel_data.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/fuel/add_fuel_data.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/fuel/fuel_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/fuel/fuel_list.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,42 +68,50 @@
       <option name="project" value="LOCAL" />
       <updated>1611594310876</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Update to provider state  managment">
+      <created>1622151011552</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1622151011552</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+    <MESSAGE value="Update to provider state  managment" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update to provider state  managment" />
   </component>
   <component name="WindowStateProjectService">
     <state x="425" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1622146750830">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="425" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/1920.0.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1622146750830" />
-    <state x="217" y="120" key="CommitChangelistDialog2" timestamp="1622149491985">
+    <state x="217" y="120" key="CommitChangelistDialog2" timestamp="1622151065453">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="217" y="120" key="CommitChangelistDialog2/1920.0.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1622149491985" />
+    <state x="217" y="120" key="CommitChangelistDialog2/1920.0.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1622151065453" />
     <state width="402" height="464" key="DebuggerActiveHint" timestamp="1622147518687">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="402" height="464" key="DebuggerActiveHint/1920.0.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1622147518687" />
-    <state width="1344" height="222" key="GridCell.Tab.0.bottom" timestamp="1622147355288">
+    <state width="672" height="222" key="GridCell.Tab.0.bottom" timestamp="1622151637282">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1344" height="222" key="GridCell.Tab.0.bottom/1920.0.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1622147355288" />
-    <state width="1344" height="222" key="GridCell.Tab.0.center" timestamp="1622147355288">
+    <state width="672" height="222" key="GridCell.Tab.0.bottom/1920.0.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1622151637282" />
+    <state width="672" height="222" key="GridCell.Tab.0.center" timestamp="1622151637282">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1344" height="222" key="GridCell.Tab.0.center/1920.0.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1622147355288" />
-    <state width="1344" height="222" key="GridCell.Tab.0.left" timestamp="1622147355288">
+    <state width="672" height="222" key="GridCell.Tab.0.center/1920.0.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1622151637282" />
+    <state width="672" height="222" key="GridCell.Tab.0.left" timestamp="1622151637282">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1344" height="222" key="GridCell.Tab.0.left/1920.0.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1622147355288" />
-    <state width="1344" height="222" key="GridCell.Tab.0.right" timestamp="1622147355288">
+    <state width="672" height="222" key="GridCell.Tab.0.left/1920.0.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1622151637282" />
+    <state width="672" height="222" key="GridCell.Tab.0.right" timestamp="1622151637282">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1344" height="222" key="GridCell.Tab.0.right/1920.0.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1622147355288" />
+    <state width="672" height="222" key="GridCell.Tab.0.right/1920.0.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1622151637282" />
     <state x="452" y="235" key="RollbackChangesDialog" timestamp="1622146886615">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -118,13 +121,17 @@
     </state>
     <state x="394" y="48" key="SettingsEditor/1920.0.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1622148540013" />
     <state x="2235" y="38" key="SettingsEditor/1920.0.1536.832/-1920.0.1920.1040/0.0.1920.1040@1920.0.1536.832" timestamp="1622144631239" />
+    <state x="287" y="245" key="Vcs.Push.Dialog.v2" timestamp="1622151014075">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="287" y="245" key="Vcs.Push.Dialog.v2/1920.0.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1622151014075" />
     <state x="92" y="92" width="1736" height="856" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1622106506394">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="com.android.tools.idea.avdmanager.AvdListDialog/1920.0.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1622106506394" />
-    <state x="391" y="255" width="607" height="536" key="find.popup" timestamp="1622148166868">
+    <state x="391" y="255" width="737" height="606" key="find.popup" timestamp="1622151999422">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="391" y="255" width="607" height="536" key="find.popup/1920.0.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1622148166868" />
+    <state x="391" y="255" width="737" height="606" key="find.popup/1920.0.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1622151999422" />
   </component>
 </project>

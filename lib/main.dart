@@ -24,6 +24,20 @@ class MyApp extends StatelessWidget {
           AppRoutes.fuelList: (ctx) => Dashboard(),
           AppRoutes.addFuelEvent: (ctx) => AddFuelScreen()
         },
+        home: Scaffold(
+          bottomNavigationBar: BottomNavigationBar(
+            items: [
+              BottomNavigationBarItem(
+                icon: Icon(Icons.home),
+                label: 'Strona Główna',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.business),
+                label: 'Paliwo',
+              ),
+            ],
+          ),
+        ),
         theme: ThemeData(
           primarySwatch: Colors.blue,
           visualDensity: VisualDensity.adaptivePlatformDensity,
