@@ -1,32 +1,44 @@
+import 'package:car_history/models/fuel_data_collection.dart';
 import 'package:car_history/models/fuel_model.dart';
 import 'package:date_field/date_field.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-import 'helper/FuelCollection.dart';
+class AddFuelScreen extends StatefulWidget {
+  @override
+  _AddFuelScreenState createState() => _AddFuelScreenState();
+}
 
-final counterController = TextEditingController();
-final pricePerLiterController = TextEditingController();
-final totalLiterController = TextEditingController();
-DateTime date = DateTime.now();
+class _AddFuelScreenState extends State<AddFuelScreen> {
+  final counterController = TextEditingController();
 
-class AddFuelScreen extends StatelessWidget {
+  final pricePerLiterController = TextEditingController();
+
+  final totalLiterController = TextEditingController();
+
+  DateTime date = DateTime.now();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Tankowanie"),
+        title: Text("Nowe tankowanie"),
         actions: [
           Padding(
               padding: EdgeInsets.only(right: 20.0),
               child: GestureDetector(
                 onTap: () {
-                  FuelCollection.collection.add(FuelModel(
+                  var newModel = FuelModel(
                       amount: totalLiterController.text,
                       counter: counterController.text,
                       date: date,
-                      pricePerLiter: pricePerLiterController.text));
-                  Navigator.pop(context);
+                      pricePerLiter: pricePerLiterController.text);
+                  Provider.of<FuelDataCollection>(context, listen: false)
+                      .addFuelElement(newModel);
+
+                  print(newModel.date);
+                  Navigator.pop(context, newModel);
                 },
                 child: Icon(
                   Icons.done,
@@ -35,19 +47,49 @@ class AddFuelScreen extends StatelessWidget {
               )),
         ],
       ),
-      body: Center(child: AddFuelWidget()),
+      body: Center(
+          child: AddFuelWidget(
+              date: this.date,
+              counterController: this.counterController,
+              totalLiterController: this.totalLiterController,
+              pricePerLiterController: this.pricePerLiterController)),
     );
   }
 }
 
 class AddFuelWidget extends StatefulWidget {
+  final counterController;
+  final pricePerLiterController;
+  final totalLiterController;
+  DateTime date;
+
+  AddFuelWidget(
+      {this.date,
+      this.pricePerLiterController,
+      this.counterController,
+      this.totalLiterController});
+
   @override
-  _AddFuelWidgetState createState() => _AddFuelWidgetState();
+  _AddFuelWidgetState createState() => _AddFuelWidgetState(
+      date: this.date,
+      counterController: this.counterController,
+      totalLiterController: this.totalLiterController,
+      pricePerLiterController: this.pricePerLiterController);
 }
 
 /// This is the private State class that goes with MyStatefulWidget.
 class _AddFuelWidgetState extends State<AddFuelWidget> {
   final _formKey = GlobalKey<FormState>();
+  final counterController;
+  final pricePerLiterController;
+  final totalLiterController;
+  DateTime date;
+
+  _AddFuelWidgetState(
+      {this.date,
+      this.pricePerLiterController,
+      this.counterController,
+      this.totalLiterController});
 
   @override
   Widget build(BuildContext context) {
@@ -77,7 +119,7 @@ class _AddFuelWidgetState extends State<AddFuelWidget> {
                       initialValue: DateTime.now(),
                       onDateSelected: (DateTime value) {
                         date = new DateTime(value.year, value.month, value.day,
-                            date.hour, value.minute);
+                            date.hour ?? 0, date.minute ?? 0);
                       },
                     ),
                   ),
@@ -98,8 +140,10 @@ class _AddFuelWidgetState extends State<AddFuelWidget> {
                           ? 'Please not the first day'
                           : null,
                       onDateSelected: (DateTime value) {
-                        date = new DateTime(date.year, date.month, date.day,
-                            value.hour, value.minute);
+                        setState(() {
+                          date = new DateTime(date.year, date.month, date.day,
+                              value.hour, value.minute);
+                        });
                       },
                     ),
                   ),
@@ -111,12 +155,6 @@ class _AddFuelWidgetState extends State<AddFuelWidget> {
                   hintText: 'Licznik', icon: Icon(Icons.time_to_leave_sharp)),
               keyboardType: TextInputType.numberWithOptions(decimal: true),
               controller: counterController,
-              validator: (value) {
-/*                if (value!.isEmpty) {
-                  return 'Please enter some text';
-                }*/
-                return null;
-              },
             ),
             Row(
               children: [
@@ -127,12 +165,6 @@ class _AddFuelWidgetState extends State<AddFuelWidget> {
                         hintText: 'Ilość', icon: Icon(Icons.ev_station)),
                     keyboardType:
                         TextInputType.numberWithOptions(decimal: true),
-                    validator: (value) {
-/*                if (value!.isEmpty) {
-                        return 'Please enter some text';
-                      }*/
-                      return null;
-                    },
                   ),
                 ),
                 Expanded(
@@ -143,12 +175,6 @@ class _AddFuelWidgetState extends State<AddFuelWidget> {
                         icon: Icon(Icons.monetization_on)),
                     keyboardType:
                         TextInputType.numberWithOptions(decimal: true),
-                    validator: (value) {
-/*             if (value!.isEmpty) {
-                        return 'Please enter some text';
-                      }*/
-                      return null;
-                    },
                   ),
                 ),
               ],
