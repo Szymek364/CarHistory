@@ -1,4 +1,5 @@
 import 'package:car_history/routes.dart';
+import 'package:car_history/screens/fuel/edit_fuel_data.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -21,8 +22,9 @@ class MyApp extends StatelessWidget {
         title: 'Historia samochodu',
         initialRoute: AppRoutes.fuelList,
         routes: {
-          AppRoutes.fuelList: (ctx) => Dashboard(),
-          AppRoutes.addFuelEvent: (ctx) => AddFuelScreen()
+          AppRoutes.fuelList: (ctx) => FuelList(),
+          AppRoutes.addFuelEvent: (ctx) => AddFuelScreen(),
+          AppRoutes.editFuelEvent: (ctx) => EditFuelScreen(),
         },
         home: Scaffold(
           bottomNavigationBar: BottomNavigationBar(

@@ -5,29 +5,32 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class AddFuelScreen extends StatefulWidget {
+class EditFuelScreen extends StatefulWidget {
   @override
-  _AddFuelScreenState createState() => _AddFuelScreenState();
+  _EditFuelScreenState createState() => _EditFuelScreenState();
 }
 
-class _AddFuelScreenState extends State<AddFuelScreen> {
-  final courseController = TextEditingController();
-  final pricePerLiterController = TextEditingController();
-  final totalLiterController = TextEditingController();
+class _EditFuelScreenState extends State<EditFuelScreen> {
   final formKey = GlobalKey<FormState>();
-  DateTime date = DateTime.now();
 
   @override
   Widget build(BuildContext context) {
+    final fuelModel = ModalRoute.of(context).settings.arguments as FuelModel;
+    final courseController = TextEditingController(text: fuelModel.course);
+    final pricePerLiterController =
+        TextEditingController(text: fuelModel.pricePerLiter);
+    final totalLiterController = TextEditingController(text: fuelModel.amount);
+    DateTime date = fuelModel.date;
+
     Function onDateUpdate = (newDate) {
       setState(() {
-        this.date = newDate;
+        date = newDate;
       });
     };
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Nowe tankowanie"),
+        title: Text("Edycja"),
         actions: [
           Padding(
               padding: EdgeInsets.only(right: 20.0),
@@ -54,9 +57,9 @@ class _AddFuelScreenState extends State<AddFuelScreen> {
       body: Center(
           child: FuelFormWidget(
               onDateUpdate: onDateUpdate,
-              courseController: this.courseController,
-              totalLiterController: this.totalLiterController,
-              pricePerLiterController: this.pricePerLiterController,
+              courseController: courseController,
+              totalLiterController: totalLiterController,
+              pricePerLiterController: pricePerLiterController,
               formKey: this.formKey)),
     );
   }

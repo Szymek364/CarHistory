@@ -5,12 +5,12 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
-class Dashboard extends StatefulWidget {
+class FuelList extends StatefulWidget {
   @override
-  _DashboardState createState() => _DashboardState();
+  _FuelListState createState() => _FuelListState();
 }
 
-class _DashboardState extends State<Dashboard> {
+class _FuelListState extends State<FuelList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,16 +24,21 @@ class _DashboardState extends State<Dashboard> {
             itemCount: fuelCollection.fuelCollectionLength,
             itemBuilder: (context, index) {
               return ListTile(
-                  leading: CircleAvatar(
-                    child: Icon(Icons.ev_station),
-                  ),
-                  trailing: Text(fuelCollection.fuelCollection[index].totalCost
-                          .toString() +
-                      ' zł'),
-                  title: Text('Tankowanie'),
-                  subtitle: Text(DateFormat("dd-MM-yyyy  hh:mm")
-                      .format(fuelCollection.fuelCollection[index].date)
-                      .toString()));
+                leading: CircleAvatar(
+                  child: Icon(Icons.ev_station),
+                ),
+                trailing: Text(
+                    fuelCollection.fuelCollection[index].totalCost.toString() +
+                        ' zł'),
+                title: Text('Tankowanie'),
+                subtitle: Text(DateFormat("dd-MM-yyyy  hh:mm")
+                    .format(fuelCollection.fuelCollection[index].date)
+                    .toString()),
+                onTap: () {
+                  Navigator.pushNamed(context, AppRoutes.editFuelEvent,
+                      arguments: fuelCollection.fuelCollection[index]);
+                },
+              );
             },
           ));
         },
