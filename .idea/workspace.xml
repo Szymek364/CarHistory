@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="675fb52b-5e87-40d0-a75d-8576493ddd3c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/routes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/routes.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/main/home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/main/home.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/models/fuel_data_collection.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/fuel_data_collection.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/fuel/add_fuel_data.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/fuel/add_fuel_data.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/fuel/fuel_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/fuel/fuel_list.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622191860653</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Added bottom navigation bar">
+      <created>1622193988204</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1622193988204</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -136,17 +143,18 @@
     <MESSAGE value="Fix maximum fuel time" />
     <MESSAGE value="Update fuel event" />
     <MESSAGE value="Replace hint text with labels" />
-    <option name="LAST_COMMIT_MESSAGE" value="Replace hint text with labels" />
+    <MESSAGE value="Added bottom navigation bar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added bottom navigation bar" />
   </component>
   <component name="WindowStateProjectService">
     <state x="425" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1622193891490">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="425" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/1920.0.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1622193891490" />
-    <state x="217" y="120" key="CommitChangelistDialog2" timestamp="1622191860055">
+    <state x="217" y="120" key="CommitChangelistDialog2" timestamp="1622193987699">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="217" y="120" key="CommitChangelistDialog2/1920.0.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1622191860055" />
+    <state x="217" y="120" key="CommitChangelistDialog2/1920.0.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1622193987699" />
     <state width="429" height="464" key="DebuggerActiveHint" timestamp="1622191052287">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -176,10 +184,10 @@
     </state>
     <state x="394" y="48" key="SettingsEditor/1920.0.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1622148540013" />
     <state x="2235" y="38" key="SettingsEditor/1920.0.1536.832/-1920.0.1920.1040/0.0.1920.1040@1920.0.1536.832" timestamp="1622144631239" />
-    <state x="287" y="245" key="Vcs.Push.Dialog.v2" timestamp="1622191862186">
+    <state x="287" y="245" key="Vcs.Push.Dialog.v2" timestamp="1622193989498">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="287" y="245" key="Vcs.Push.Dialog.v2/1920.0.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1622191862186" />
+    <state x="287" y="245" key="Vcs.Push.Dialog.v2/1920.0.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1622193989498" />
     <state x="92" y="92" width="1736" height="856" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1622106506394">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

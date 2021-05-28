@@ -13,7 +13,48 @@ class FuelListScreen extends StatefulWidget {
 class _FuelListScreenState extends State<FuelListScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Consumer<FuelDataCollection>(
+      builder: (context, fuelCollection, child) {
+        return Scaffold(
+          appBar: AppBar(
+            title: Text('Historia tankowania'),
+          ),
+          body: SafeArea(
+            child: Center(
+                child: ListView.builder(
+              itemCount: fuelCollection.fuelCollectionLength,
+              itemBuilder: (context, index) {
+                return ListTile(
+                  leading: CircleAvatar(
+                    child: Icon(Icons.ev_station),
+                  ),
+                  trailing: Text(fuelCollection.fuelCollection[index].totalCost
+                          .toStringAsFixed(2) +
+                      ' zł'),
+                  title: Text('Tankowanie'),
+                  subtitle: Text(DateFormat("dd-MM-yyyy  hh:mm")
+                      .format(fuelCollection.fuelCollection[index].date)
+                      .toString()),
+                  onTap: () {
+                    Navigator.pushNamed(context, AppRoutes.editFuelEvent,
+                        arguments: fuelCollection.fuelCollection[index]);
+                  },
+                );
+              },
+            )),
+          ),
+          floatingActionButton: FloatingActionButton(
+            child: Icon(Icons.add),
+            onPressed: () {
+              Navigator.pushNamed(context, AppRoutes.addFuelEvent,
+                  arguments: fuelCollection.lastCourseValue);
+            },
+          ),
+        );
+      },
+    );
+
+/*    return Scaffold(
       appBar: AppBar(
         title: Text('Historia tankowania'),
       ),
@@ -46,9 +87,9 @@ class _FuelListScreenState extends State<FuelListScreen> {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
         onPressed: () {
-          Navigator.pushNamed(context, AppRoutes.addFuelEvent);
+          Navigator.pushNamed(context, AppRoutes.addFuelEvent, arguments: fuelCollection.fuelCollection[index]);
         },
       ),
-    );
+    );*/
   }
 }

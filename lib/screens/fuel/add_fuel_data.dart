@@ -11,17 +11,18 @@ class AddFuelScreen extends StatefulWidget {
 }
 
 class _AddFuelScreenState extends State<AddFuelScreen> {
-  final courseController = TextEditingController();
-  final pricePerLiterController = TextEditingController();
-  final totalLiterController = TextEditingController();
-  final formKey = GlobalKey<FormState>();
-  DateTime date = DateTime.now();
-
   @override
   Widget build(BuildContext context) {
+    final courseController = TextEditingController(
+        text: ModalRoute.of(context).settings.arguments as String);
+    final pricePerLiterController = TextEditingController();
+    final totalLiterController = TextEditingController();
+    final formKey = GlobalKey<FormState>();
+    DateTime date = DateTime.now();
+
     Function onDateUpdate = (newDate) {
       setState(() {
-        this.date = newDate;
+        date = newDate;
       });
     };
 
@@ -54,10 +55,10 @@ class _AddFuelScreenState extends State<AddFuelScreen> {
       body: Center(
           child: FuelFormWidget(
               onDateUpdate: onDateUpdate,
-              courseController: this.courseController,
-              totalLiterController: this.totalLiterController,
-              pricePerLiterController: this.pricePerLiterController,
-              formKey: this.formKey)),
+              courseController: courseController,
+              totalLiterController: totalLiterController,
+              pricePerLiterController: pricePerLiterController,
+              formKey: formKey)),
     );
   }
 }
