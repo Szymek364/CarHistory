@@ -8,4 +8,12 @@ class FuelModel {
 
   double get totalCost =>
       double.parse(this.amount) + double.parse(this.pricePerLiter);
+
+  void update(
+      String amount, String course, DateTime date, String pricePerLiter) {
+    this.amount = amount;
+    this.course = course;
+    this.date = date;
+    this.pricePerLiter = pricePerLiter;
+  }
 }

@@ -14,4 +14,10 @@ class FuelDataCollection extends ChangeNotifier {
   get fuelCollectionLength {
     return this.fuelCollection.length;
   }
+
+  updateFuelEvent(FuelModel model, String amount, String course, DateTime date,
+      String pricePerLiter) {
+    model.update(amount, course, date, pricePerLiter);
+    notifyListeners();
+  }
 }

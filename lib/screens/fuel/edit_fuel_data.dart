@@ -37,13 +37,13 @@ class _EditFuelScreenState extends State<EditFuelScreen> {
               child: GestureDetector(
                 onTap: () {
                   if (formKey.currentState.validate()) {
-                    var newModel = FuelModel(
-                        amount: totalLiterController.text,
-                        course: courseController.text,
-                        date: date,
-                        pricePerLiter: pricePerLiterController.text);
                     Provider.of<FuelDataCollection>(context, listen: false)
-                        .addFuelElement(newModel);
+                        .updateFuelEvent(
+                            fuelModel,
+                            totalLiterController.text,
+                            courseController.text,
+                            date,
+                            pricePerLiterController.text);
                     Navigator.pop(context);
                   }
                 },
