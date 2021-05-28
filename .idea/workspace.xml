@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="675fb52b-5e87-40d0-a75d-8576493ddd3c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/models/fuel_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/fuel_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/models/fuel_data_collection.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/fuel_data_collection.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/screens/fuel/add_fuel_data.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/fuel/add_fuel_data.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/fuel/fuel_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/fuel/fuel_list.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,24 +81,32 @@
       <option name="project" value="LOCAL" />
       <updated>1622152852972</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added input validators">
+      <created>1622188661623</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1622188661623</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Update to provider state  managment" />
     <MESSAGE value="refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactoring" />
+    <MESSAGE value="Added input validators" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added input validators" />
   </component>
   <component name="WindowStateProjectService">
     <state x="425" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1622146750830">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="425" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/1920.0.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1622146750830" />
-    <state x="217" y="120" key="CommitChangelistDialog2" timestamp="1622152852417">
+    <state x="217" y="120" key="CommitChangelistDialog2" timestamp="1622188660901">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="217" y="120" key="CommitChangelistDialog2/1920.0.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1622152852417" />
+    <state x="217" y="120" key="CommitChangelistDialog2/1920.0.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1622188660901" />
     <state width="418" height="464" key="DebuggerActiveHint" timestamp="1622187077651">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -149,21 +156,5 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="413" y="315" key="git4idea.merge.GitPullDialog/1920.0.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1622152924970" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/screens/fuel/add_fuel_data.dart</url>
-          <line>154</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/screens/fuel/add_fuel_data.dart</url>
-          <line>36</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

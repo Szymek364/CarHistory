@@ -41,8 +41,6 @@ class _AddFuelScreenState extends State<AddFuelScreen> {
                         pricePerLiter: pricePerLiterController.text);
                     Provider.of<FuelDataCollection>(context, listen: false)
                         .addFuelElement(newModel);
-
-                    print(newModel.amount);
                     Navigator.pop(context, newModel);
                   }
                 },

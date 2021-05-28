@@ -6,7 +6,8 @@ class FuelDataCollection extends ChangeNotifier {
   List<FuelModel> fuelCollection = [];
 
   addFuelElement(FuelModel newModel) {
-    this.fuelCollection.insert(0, newModel);
+    this.fuelCollection.add(newModel);
+    this.fuelCollection.sort((a, b) => b.date.compareTo(a.date));
     this.notifyListeners();
   }
 
