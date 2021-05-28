@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="675fb52b-5e87-40d0-a75d-8576493ddd3c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/models/fuel_data_collection.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/fuel_data_collection.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/models/fuel_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/fuel_model.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/fuel/edit_fuel_data.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/fuel/edit_fuel_data.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/fuel/fuel_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/fuel/fuel_list.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/widgets/fuel/FuelFormWidget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/widgets/fuel/FuelFormWidget.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +110,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622190394520</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Update fuel event">
+      <created>1622191340204</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1622191340204</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -130,10 +135,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="425" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/1920.0.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1622146750830" />
-    <state x="217" y="120" key="CommitChangelistDialog2" timestamp="1622190393977">
+    <state x="217" y="120" key="CommitChangelistDialog2" timestamp="1622191339636">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="217" y="120" key="CommitChangelistDialog2/1920.0.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1622190393977" />
+    <state x="217" y="120" key="CommitChangelistDialog2/1920.0.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1622191339636" />
     <state width="429" height="464" key="DebuggerActiveHint" timestamp="1622191052287">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

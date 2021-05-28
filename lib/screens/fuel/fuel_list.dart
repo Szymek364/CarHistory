@@ -27,9 +27,9 @@ class _FuelListState extends State<FuelList> {
                 leading: CircleAvatar(
                   child: Icon(Icons.ev_station),
                 ),
-                trailing: Text(
-                    fuelCollection.fuelCollection[index].totalCost.toString() +
-                        ' zł'),
+                trailing: Text(fuelCollection.fuelCollection[index].totalCost
+                        .toStringAsFixed(2) +
+                    ' zł'),
                 title: Text('Tankowanie'),
                 subtitle: Text(DateFormat("dd-MM-yyyy  hh:mm")
                     .format(fuelCollection.fuelCollection[index].date)

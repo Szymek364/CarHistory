@@ -7,7 +7,7 @@ class FuelModel {
   FuelModel({this.date, this.course, this.amount, this.pricePerLiter});
 
   double get totalCost =>
-      double.parse(this.amount) + double.parse(this.pricePerLiter);
+      double.parse(this.amount) * double.parse(this.pricePerLiter);
 
   void update(
       String amount, String course, DateTime date, String pricePerLiter) {

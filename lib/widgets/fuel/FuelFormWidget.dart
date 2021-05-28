@@ -102,7 +102,7 @@ class _FuelFormWidgetState extends State<FuelFormWidget> {
             ),
             TextFormField(
               decoration: const InputDecoration(
-                  hintText: 'Stan licznika',
+                  labelText: 'Stan licznika',
                   icon: Icon(
                     Icons.time_to_leave_sharp,
                   ),
@@ -122,7 +122,7 @@ class _FuelFormWidgetState extends State<FuelFormWidget> {
                   child: TextFormField(
                     controller: totalLiterController,
                     decoration: const InputDecoration(
-                        hintText: 'Ilość', icon: Icon(Icons.ev_station)),
+                        icon: Icon(Icons.ev_station), labelText: 'Ilość '),
                     keyboardType:
                         TextInputType.numberWithOptions(decimal: true),
                     validator: (value) {
@@ -137,7 +137,8 @@ class _FuelFormWidgetState extends State<FuelFormWidget> {
                   child: TextFormField(
                     controller: pricePerLiterController,
                     decoration: const InputDecoration(
-                        hintText: 'Cena za litr',
+                        labelText: 'Cena za litr',
+                        suffixText: 'zł',
                         icon: Icon(Icons.monetization_on)),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
