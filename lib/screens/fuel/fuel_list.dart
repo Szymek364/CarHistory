@@ -5,12 +5,12 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
-class FuelList extends StatefulWidget {
+class FuelListScreen extends StatefulWidget {
   @override
-  _FuelListState createState() => _FuelListState();
+  _FuelListScreenState createState() => _FuelListScreenState();
 }
 
-class _FuelListState extends State<FuelList> {
+class _FuelListScreenState extends State<FuelListScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
