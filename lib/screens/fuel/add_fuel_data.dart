@@ -124,6 +124,7 @@ class _AddFuelWidgetState extends State<AddFuelWidget> {
                         icon: Icon(Icons.event_note),
                         labelText: 'Data',
                       ),
+                      lastDate: DateTime.now(),
                       mode: DateTimeFieldPickerMode.date,
                       autovalidateMode: AutovalidateMode.always,
                       initialValue: DateTime.now(),

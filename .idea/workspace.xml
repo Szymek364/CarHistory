@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="675fb52b-5e87-40d0-a75d-8576493ddd3c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/models/fuel_data_collection.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/models/fuel_data_collection.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/screens/fuel/add_fuel_data.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/fuel/add_fuel_data.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -88,7 +87,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622188661623</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Sort fuel collection list">
+      <created>1622188925939</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1622188925939</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -96,17 +102,18 @@
     <MESSAGE value="Update to provider state  managment" />
     <MESSAGE value="refactoring" />
     <MESSAGE value="Added input validators" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added input validators" />
+    <MESSAGE value="Sort fuel collection list" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sort fuel collection list" />
   </component>
   <component name="WindowStateProjectService">
     <state x="425" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1622146750830">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="425" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/1920.0.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1622146750830" />
-    <state x="217" y="120" key="CommitChangelistDialog2" timestamp="1622188660901">
+    <state x="217" y="120" key="CommitChangelistDialog2" timestamp="1622188925449">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="217" y="120" key="CommitChangelistDialog2/1920.0.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1622188660901" />
+    <state x="217" y="120" key="CommitChangelistDialog2/1920.0.1536.832/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1622188925449" />
     <state width="418" height="464" key="DebuggerActiveHint" timestamp="1622187077651">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
