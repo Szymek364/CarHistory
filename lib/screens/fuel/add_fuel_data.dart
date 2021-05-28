@@ -11,16 +11,20 @@ class AddFuelScreen extends StatefulWidget {
 }
 
 class _AddFuelScreenState extends State<AddFuelScreen> {
-  final counterController = TextEditingController();
-
+  final courseController = TextEditingController();
   final pricePerLiterController = TextEditingController();
-
   final totalLiterController = TextEditingController();
-
+  final formKey = GlobalKey<FormState>();
   DateTime date = DateTime.now();
 
   @override
   Widget build(BuildContext context) {
+    Function onDateUpdate = (newDate) {
+      setState(() {
+        this.date = newDate;
+      });
+    };
+
     return Scaffold(
       appBar: AppBar(
         title: Text("Nowe tankowanie"),
@@ -29,16 +33,18 @@ class _AddFuelScreenState extends State<AddFuelScreen> {
               padding: EdgeInsets.only(right: 20.0),
               child: GestureDetector(
                 onTap: () {
-                  var newModel = FuelModel(
-                      amount: totalLiterController.text,
-                      counter: counterController.text,
-                      date: date,
-                      pricePerLiter: pricePerLiterController.text);
-                  Provider.of<FuelDataCollection>(context, listen: false)
-                      .addFuelElement(newModel);
+                  if (formKey.currentState.validate()) {
+                    var newModel = FuelModel(
+                        amount: totalLiterController.text,
+                        course: courseController.text,
+                        date: date,
+                        pricePerLiter: pricePerLiterController.text);
+                    Provider.of<FuelDataCollection>(context, listen: false)
+                        .addFuelElement(newModel);
 
-                  print(newModel.date);
-                  Navigator.pop(context, newModel);
+                    print(newModel.amount);
+                    Navigator.pop(context, newModel);
+                  }
                 },
                 child: Icon(
                   Icons.done,
@@ -49,54 +55,60 @@ class _AddFuelScreenState extends State<AddFuelScreen> {
       ),
       body: Center(
           child: AddFuelWidget(
-              date: this.date,
-              counterController: this.counterController,
+              onDateUpdate: onDateUpdate,
+              courseController: this.courseController,
               totalLiterController: this.totalLiterController,
-              pricePerLiterController: this.pricePerLiterController)),
+              pricePerLiterController: this.pricePerLiterController,
+              formKey: this.formKey)),
     );
   }
 }
 
 class AddFuelWidget extends StatefulWidget {
-  final counterController;
+  final courseController;
   final pricePerLiterController;
   final totalLiterController;
-  DateTime date;
+  final formKey;
+  Function onDateUpdate;
 
   AddFuelWidget(
-      {this.date,
+      {this.onDateUpdate,
       this.pricePerLiterController,
-      this.counterController,
-      this.totalLiterController});
+      this.courseController,
+      this.totalLiterController,
+      this.formKey});
 
   @override
   _AddFuelWidgetState createState() => _AddFuelWidgetState(
-      date: this.date,
-      counterController: this.counterController,
+      onDateUpdate: this.onDateUpdate,
+      courseController: this.courseController,
       totalLiterController: this.totalLiterController,
-      pricePerLiterController: this.pricePerLiterController);
+      pricePerLiterController: this.pricePerLiterController,
+      formKey: this.formKey);
 }
 
 /// This is the private State class that goes with MyStatefulWidget.
 class _AddFuelWidgetState extends State<AddFuelWidget> {
-  final _formKey = GlobalKey<FormState>();
-  final counterController;
+  final courseController;
   final pricePerLiterController;
   final totalLiterController;
-  DateTime date;
+  final formKey;
+  final Function onDateUpdate;
+  DateTime _date = DateTime.now();
 
   _AddFuelWidgetState(
-      {this.date,
-      this.pricePerLiterController,
-      this.counterController,
-      this.totalLiterController});
+      {this.pricePerLiterController,
+      this.courseController,
+      this.totalLiterController,
+      this.formKey,
+      this.onDateUpdate});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.all(15.0),
       child: Form(
-        key: _formKey,
+        key: formKey,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
@@ -118,8 +130,9 @@ class _AddFuelWidgetState extends State<AddFuelWidget> {
                       autovalidateMode: AutovalidateMode.always,
                       initialValue: DateTime.now(),
                       onDateSelected: (DateTime value) {
-                        date = new DateTime(value.year, value.month, value.day,
-                            date.hour ?? 0, date.minute ?? 0);
+                        _date = new DateTime(value.year, value.month, value.day,
+                            _date.hour ?? 0, _date.minute ?? 0);
+                        onDateUpdate(_date);
                       },
                     ),
                   ),
@@ -136,13 +149,11 @@ class _AddFuelWidgetState extends State<AddFuelWidget> {
                       mode: DateTimeFieldPickerMode.time,
                       autovalidateMode: AutovalidateMode.always,
                       initialValue: DateTime.now(),
-                      validator: (e) => (e?.day ?? 0) == 1
-                          ? 'Please not the first day'
-                          : null,
                       onDateSelected: (DateTime value) {
                         setState(() {
-                          date = new DateTime(date.year, date.month, date.day,
-                              value.hour, value.minute);
+                          _date = new DateTime(_date.year, _date.month,
+                              _date.day, value.hour, value.minute);
+                          onDateUpdate(_date);
                         });
                       },
                     ),
@@ -152,13 +163,19 @@ class _AddFuelWidgetState extends State<AddFuelWidget> {
             ),
             TextFormField(
               decoration: const InputDecoration(
-                  hintText: 'Licznik',
+                  hintText: 'Stan licznika',
                   icon: Icon(
                     Icons.time_to_leave_sharp,
                   ),
                   suffixText: 'KM'),
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Proszę wpisać stan licznika';
+                }
+                return null;
+              },
               keyboardType: TextInputType.numberWithOptions(decimal: true),
-              controller: counterController,
+              controller: courseController,
             ),
             Row(
               children: [
@@ -169,6 +186,12 @@ class _AddFuelWidgetState extends State<AddFuelWidget> {
                         hintText: 'Ilość', icon: Icon(Icons.ev_station)),
                     keyboardType:
                         TextInputType.numberWithOptions(decimal: true),
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Proszę wpisać ilość';
+                      }
+                      return null;
+                    },
                   ),
                 ),
                 Expanded(
@@ -177,6 +200,12 @@ class _AddFuelWidgetState extends State<AddFuelWidget> {
                     decoration: const InputDecoration(
                         hintText: 'Cena za litr',
                         icon: Icon(Icons.monetization_on)),
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Proszę wpisać cene za litr';
+                      }
+                      return null;
+                    },
                     keyboardType:
                         TextInputType.numberWithOptions(decimal: true),
                   ),

@@ -27,7 +27,9 @@ class _DashboardState extends State<Dashboard> {
                   leading: CircleAvatar(
                     child: Icon(Icons.ev_station),
                   ),
-                  trailing: Text(fuelCollection.fuelCollection[index].amount),
+                  trailing: Text(fuelCollection.fuelCollection[index].totalCost
+                          .toString() +
+                      ' zł'),
                   title: Text('Tankowanie'),
                   subtitle: Text(DateFormat("dd-MM-yyyy  hh:mm")
                       .format(fuelCollection.fuelCollection[index].date)
